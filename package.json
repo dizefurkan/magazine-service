@@ -1,0 +1,36 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Magazine project api",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node --presets env,stage-2 ./src/app.js",
+    "lint": "eslint src/js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dizefurkan/magazine-server.git"
+  },
+  "keywords": [
+    "magazine",
+    "server"
+  ],
+  "author": "dizefurkan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dizefurkan/magazine-server/issues"
+  },
+  "homepage": "https://github.com/dizefurkan/magazine-server#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^5.9.0",
+    "nodemon": "^1.18.6"
+  }
+}
