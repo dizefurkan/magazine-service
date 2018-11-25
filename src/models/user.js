@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
-const UserSchema = new mongoose.Schema(
+const UserSchema = new Schema(
   {
     username: {
       type: String,
@@ -17,7 +17,7 @@ const UserSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    isEmailVerified: {
+    isEmailValid: {
       type: Boolean,
       default: false,
     },
@@ -26,6 +26,9 @@ const UserSchema = new mongoose.Schema(
       required: true,
     },
     avatar: {
+      type: String,
+    },
+    slug: {
       type: String,
     },
     role: {
