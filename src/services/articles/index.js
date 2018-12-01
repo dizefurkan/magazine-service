@@ -2,8 +2,6 @@ export default [
   {
     path: '/articles',
     method: 'get',
-    handler: (req, res) => {
-      return res.send('Articles Page');
-    }
-  }
-]
+    handler: (req, res) => res.send('Articles Page'),
+  },
+];

@@ -2,8 +2,6 @@ export default [
   {
     path: '/',
     method: 'get',
-    handler: (req, res) => {
-      return res.send('Home Page');
-    }
-  }
-]
+    handler: (req, res) => res.send('Home Page'),
+  },
+];
