@@ -1,2 +1,2 @@
-# magazine-server
+# magazine-service
 Magazine project api
