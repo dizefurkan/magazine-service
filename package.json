@@ -4,7 +4,7 @@
   "description": "Magazine project api",
   "main": "app.js",
   "scripts": {
-    "webpack": "webpack --mode=development --watch",
+    "build": "webpack --mode=development --watch",
     "start": "nodemon ./dist/main.js",
     "lint": "eslint src/js",
     "test": "echo \"Error: no test specified\" && exit 1"
