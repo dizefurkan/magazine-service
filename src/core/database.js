@@ -1,6 +1,9 @@
 import mongoose from 'mongoose';
 
-mongoose.connect('mongodb://localhost/magazine', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/magazine', {
+  useCreateIndex: true,
+  useNewUrlParser: true,
+});
 
 const conn = mongoose.connection;
 
