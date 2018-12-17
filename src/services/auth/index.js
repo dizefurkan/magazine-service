@@ -1,23 +1,39 @@
+import User from '../../models/user';
 import validater from '../../methods/validater';
 
 export default [
   {
-    path: '/signin',
-    method: 'post',
-    handler: (req, res) => res.send('SignIn Page'),
-  },
-  {
-    path: '/signup',
+    path: '/auth/signup',
     method: 'post',
     handler: (req, res) => {
-      const isValid = validater({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
+      const {
+        email,
+        password,
+        username,
+        firstname,
+        lastname,
+      } = req.body;
+      const formValidation = validater({
+        email,
+        password,
+        username,
+        firstname,
+        lastname
       });
-      return res.send(isValid);
+
+      if (formValidation) return res.send(formValidation)
+      User.create({
+        email,
+        password,
+        username,
+        firstname,
+        lastname
+      }, (err, result) => {
+        if (err) {
+          return res.send({ success: false, error: err })
+        }
+        return res.send(result);
+      });
     },
-  },
-];
+  }
+]
